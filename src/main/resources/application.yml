@@ -18,5 +18,6 @@ spring:
 naver:
   route:
     url: "https://maps.apigw.ntruss.com/map-direction/v1/driving?"
-    key_id: "8rse4q4y3x"
+    key-id: "8rse4q4y3x"
     key: "OIqU4Lk8H4EBh3Y98wM8FcmGRSZ29pSEPossvGCq"
+

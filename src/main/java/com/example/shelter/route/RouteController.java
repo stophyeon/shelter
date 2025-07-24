@@ -17,7 +17,7 @@ public class RouteController {
     private final RouteService routeService;
 
     @GetMapping("/path")
-    @Operation(summary = "accountId 조회", description = "시작 위치부터 도착 위치까지의 최단거리 경로 탐색",
+    @Operation(summary = "쉼터까지 최단 경로 찾기", description = "시작 위치부터 도착 위치까지의 최단거리 경로 탐색",
             parameters = {
                     @Parameter(in = ParameterIn.HEADER, name = "startLat", description = "시작 위치 위도", required = true, example = "37.359708"),
                     @Parameter(in = ParameterIn.HEADER, name = "startLot", description = "시작 위치 경도", required = true, example = "127.1058342"),
