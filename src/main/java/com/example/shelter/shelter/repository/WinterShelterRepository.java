@@ -1,6 +1,7 @@
 package com.example.shelter.shelter.repository;
 
 
+import com.example.shelter.shelter.dto.WinterShelterDto;
 import com.example.shelter.shelter.entity.WinterShelter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -20,15 +21,15 @@ public interface WinterShelterRepository extends JpaRepository<WinterShelter,Lon
 
     @Query(value = """
         SELECT s.*,
-               (6371 * acos(cos(radians(:userLat)) * cos(radians(s.latitude)) * 
-                            cos(radians(s.longitude) - radians(:userLng)) + 
-                            sin(radians(:userLat)) * sin(radians(s.latitude)))
-               ) AS distance 
+               TRUNCATE((6371 * acos(cos(radians(37.554722)) * cos(radians(s.latitude)) *
+                                     cos(radians(s.longitude) - radians(126.970833)) +
+                                     sin(radians(37.554722)) * sin(radians(s.latitude)))
+               ),3) AS distance
         FROM winter_shelters s
         HAVING distance <= :radiusKm
         ORDER BY distance ASC
         """, nativeQuery = true)
-    List<WinterShelter> findNearbyShelters(
+    List<Object[]> findNearbyShelters(
             @Param("userLat") double userLat,
             @Param("userLng") double userLng,
             @Param("radiusKm") double radiusKm

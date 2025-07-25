@@ -15,7 +15,7 @@ import java.util.List;
 public class SummerShelterConsumer {
     private final SummerShelterRepository repository;
 
-    @KafkaListener(topics = "summer-shelter-data", groupId = "shelter-group")
+    //@KafkaListener(topics = "summer-shelter-data", groupId = "shelter-group")
     public void listen(List<SummerShelter> shelter) {
         log.info("Received shelter data: {}", shelter);
         // DB 저장 또는 다른 로직 처리

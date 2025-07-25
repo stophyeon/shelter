@@ -1,6 +1,7 @@
 package com.example.shelter.shelter.repository;
 
 
+import com.example.shelter.shelter.dto.SummerShelterDto;
 import com.example.shelter.shelter.entity.SummerShelter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -28,7 +29,7 @@ public interface SummerShelterRepository extends JpaRepository<SummerShelter,Lon
         HAVING distance <= :radiusKm
         ORDER BY distance ASC
         """, nativeQuery = true)
-    List<SummerShelter> findNearbyShelters(
+    List<Object[]> findNearbyShelters(
             @Param("userLat") double userLat,
             @Param("userLng") double userLng,
             @Param("radiusKm") double radiusKm

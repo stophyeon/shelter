@@ -94,5 +94,8 @@ public class SummerShelter {
 
     @Column(name = "remark")
     private String remark;
+
+    @Transient
+    private Double distance;
 }
 

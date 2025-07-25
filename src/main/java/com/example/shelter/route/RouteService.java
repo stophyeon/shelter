@@ -11,6 +11,7 @@ import java.net.URI;
 @Service
 @RequiredArgsConstructor
 public class RouteService {
+
     @Value("${naver.route.key_id}")
     private String keyId;
     @Value("${naver.route.key}")

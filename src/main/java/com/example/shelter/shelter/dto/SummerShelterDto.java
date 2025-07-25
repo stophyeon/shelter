@@ -83,4 +83,7 @@ public class SummerShelterDto {
 
     @JsonProperty("RM")
     private String remark;
+
+    //사용자 위치 기준 거리
+    private Double distance;
 }

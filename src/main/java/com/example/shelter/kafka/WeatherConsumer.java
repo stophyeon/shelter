@@ -15,7 +15,7 @@ import java.util.List;
 public class WeatherConsumer {
     private final WeatherRepository repository;
 
-    @KafkaListener(topics = "weather-data", groupId = "weather-group")
+    //@KafkaListener(topics = "weather-data", groupId = "weather-group")
     public void listen(List<Weather> weather) {
         log.info("Received shelter data: {}", weather);
         // DB 저장 또는 다른 로직 처리

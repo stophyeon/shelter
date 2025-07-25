@@ -66,5 +66,8 @@ public class WinterShelterDto {
 
     @JsonProperty("WKDY_OPER_END_HR")
     private String weekdayCloseTime;
+
+    //사용자 위치 기준 거리
+    private Double distance;
 }
 
