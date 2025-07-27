@@ -49,8 +49,7 @@ public class WinterShelter {
     private Double latitude;           // 위도
     private Double longitude;          // 경도
 
-    @Transient
-    private Double distance;
+
 }
 
 

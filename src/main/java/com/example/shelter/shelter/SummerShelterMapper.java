@@ -18,4 +18,7 @@ public interface SummerShelterMapper {
     List<SummerShelterDto> toDtoList(List<SummerShelter> entityList);
     @Mapping(target="id", ignore=true)
     List<SummerShelter> toEntityList(List<SummerShelterDto> dtoList);
+
+
+
 }

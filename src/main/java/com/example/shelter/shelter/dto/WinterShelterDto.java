@@ -6,8 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class WinterShelterDto {
 
     @JsonProperty("REARE_NM")
@@ -69,5 +69,6 @@ public class WinterShelterDto {
 
     //사용자 위치 기준 거리
     private Double distance;
+
 }
 
