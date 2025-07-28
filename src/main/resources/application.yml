@@ -2,9 +2,9 @@ server:
   port: 8090
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/shelter_service
+    url: jdbc:mysql://localhost:3306/shelter
     username: root
-    password: dud990531
+    password: dud990531@
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -14,10 +14,22 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
   application:
     name: shelter
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
 
 naver:
   route:
     url: "https://maps.apigw.ntruss.com/map-direction/v1/driving?"
-    key-id: "8rse4q4y3x"
+    key_id: "8rse4q4y3x"
     key: "OIqU4Lk8H4EBh3Y98wM8FcmGRSZ29pSEPossvGCq"
 
