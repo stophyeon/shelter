@@ -18,6 +18,8 @@ public class Weather {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String locationName;
+    private Integer nx;
+    private Integer ny;
     private String baseDate;
     private String fcstTime;
 

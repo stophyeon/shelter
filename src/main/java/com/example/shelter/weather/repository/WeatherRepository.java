@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 public interface WeatherRepository extends JpaRepository<Weather,Long> {
     //public List<WinterShelter> findByRegionCode(String regionCode);
-
+    public Weather findByNxNy(Integer nx, Integer ny);
 
 }
