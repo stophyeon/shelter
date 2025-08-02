@@ -56,7 +56,20 @@ public class KafkaConsumerService {
         ObjectMapper objectMapper = new ObjectMapper();
         List<WeatherDto> dtoList = data.stream()
                 .map(map -> objectMapper.convertValue(map, WeatherDto.class))
-                .collect(Collectors.toList());
-        if (!data.isEmpty()) weatherRepo.saveAll(weatherMapper.toEntityList(dtoList));
+                .toList();
+        if (!data.isEmpty()) {
+            for (WeatherDto dto : dtoList) saveOrUpdateByLocationName(dto);
+        }
+    }
+    public void saveOrUpdateByLocationName(WeatherDto dto) {
+        Weather entity = weatherRepo.findByLocationName(dto.getLocationName())
+                .orElse(new Weather());
+
+        if (entity.getId() == null) {
+            entity.setLocationName(dto.getLocationName());
+        }
+
+        weatherMapper.updateEntityFromDto(dto,entity);
+        weatherRepo.save(entity);
     }
 }

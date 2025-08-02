@@ -2,6 +2,7 @@ package com.example.shelter.weather;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface WeatherMapper {
     List<WeatherDto> toDtoList(List<Weather> entityList);
     @Mapping(target="id", ignore=true)
     List<Weather> toEntityList(List<WeatherDto> dtoList);
+
+    @Mapping(target = "id", ignore = true)
+    void updateEntityFromDto(WeatherDto dto, @MappingTarget Weather entity);
 }
