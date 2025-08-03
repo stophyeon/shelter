@@ -1,6 +1,6 @@
 package com.example.shelter.weather;
 
-import com.example.shelter.shelter.dto.SummerShelterDto;
+import com.example.shelter.weather.dto.WeatherDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/weather")
@@ -25,7 +23,7 @@ public class WeatherController {
                     @Parameter(in = ParameterIn.HEADER, name = "userLot", description = "사용자 위치 경도", required = true, example = "127.1058342")
             })
     public WeatherDto getWeather(@RequestParam(value = "userLat",required = true) String userLat,
-                                       @RequestParam(value = "userLot",required = true)String userLot){
+                                 @RequestParam(value = "userLot",required = true)String userLot){
         return weatherService.findTodayWeather(userLat,userLot);
     }
 }

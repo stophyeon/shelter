@@ -1,7 +1,6 @@
 package com.example.shelter.weather.repository;
 
 import com.example.shelter.weather.Weather;
-import com.example.shelter.weather.WeatherDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

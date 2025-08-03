@@ -1,4 +1,4 @@
-package com.example.shelter.weather;
+package com.example.shelter.weather.dto;
 
 import lombok.Data;
 

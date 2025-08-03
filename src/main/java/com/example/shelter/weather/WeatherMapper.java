@@ -1,5 +1,6 @@
 package com.example.shelter.weather;
 
+import com.example.shelter.weather.dto.WeatherDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

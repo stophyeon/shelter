@@ -1,5 +1,6 @@
 package com.example.shelter.weather;
 
+import com.example.shelter.weather.dto.WeatherDto;
 import com.example.shelter.weather.repository.WeatherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
