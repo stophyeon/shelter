@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "https://frontend.14-63-176-141.nip.io:30443")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/route")
+@RequestMapping("/api/route")
 public class RouteController {
 
     private final RouteService routeService;
